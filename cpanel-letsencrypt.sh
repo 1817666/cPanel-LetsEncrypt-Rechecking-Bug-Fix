@@ -9,7 +9,7 @@ while IFS= read -r line; do
 	then
 		echo -e "Domain \"$domain\" needs renewal because it is affected by the Let's Encrypt CAA rechecking problem.\n"
 		uapi --user=$user SSL delete_ssl domain=$domain
-		/usr/local/cpanel/bin/autossl_check--user=$user
+		/usr/local/cpanel/bin/autossl_check --user=$user
 	else
 		echo -e "The certificate currently available on \"$domain\" is OK.\n"
 	fi
